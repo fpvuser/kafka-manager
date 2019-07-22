@@ -65,4 +65,6 @@ object TopicConfigs {
       case None => throw new IllegalArgumentException(s"Undefined topic configs for version : $version, cannot get config names and doc")
     }
   }
+
+  def additionalConfigNamesAndDoc(): Seq[(String, String)] = AdditionalConfig.configNamesAndDoc
 }

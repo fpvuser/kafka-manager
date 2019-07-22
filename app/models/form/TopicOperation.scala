@@ -13,7 +13,7 @@ sealed trait TopicOperation
 
 case class TConfig(name: String, value: Option[String], help: Option[String])
 
-case class CreateTopic(topic: String, partitions: Int, replication: Int, configs: List[TConfig]) extends TopicOperation
+case class CreateTopic(topic: String, partitions: Int, replication: Int, configs: List[TConfig], additionals: List[TConfig]) extends TopicOperation
 case class DeleteTopic(topic: String) extends TopicOperation
 case class AddTopicPartitions(topic: String, brokers: Seq[BrokerSelect], partitions: Int, readVersion: Int) extends TopicOperation
 case class AddMultipleTopicsPartitions(topics: Seq[TopicSelect],brokers: Seq[BrokerSelect], partitions: Int, readVersions: Seq[ReadVersion]) extends TopicOperation
